@@ -1,0 +1,216 @@
+<html>
+  <head>
+    <style>
+      input {
+        margin: 2px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      body {
+        background-color: rgb(22, 179, 241);
+      }
+      .description {
+        font-size: small;
+        font-weight: normal;
+        color: gray;
+      }
+
+      .seperator {
+        font-weight: bold;
+        margin-left: 1px;
+        margin-right: 1px;
+      }
+
+      .nameInputContatiner {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+      }
+
+      .locationDetailContatiner {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+      }
+
+      .nameInputField {
+        margin-right: 5px;
+      }
+
+      .addressContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+      }
+
+      .dateContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+      }
+
+      .streetAddress {
+        width: 50%;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(181, 234, 243);
+        width: 60%;
+        border-radius: 10px;
+        margin-left: 175px;
+        padding-left: 20px;
+        position: relative;
+        box-shadow: 0 0.3em 1em black;
+      }
+
+      .dayOrTime {
+        width: 50px;
+      }
+
+      .main {
+        align-items: center;
+      }
+
+      #appoinmentReason {
+        width: 50%;
+        margin-top: 5px;
+      }
+
+      #submit {
+        display: block;
+        align-items: center;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="wrapper">
+        <h1>Appoinment Request</h1>
+        <p>Let us know how we can help you</p>
+        <hr />
+        <form action="" onsubmit="alert('you submitted the form');">
+          <label for="FullName"
+            >Full Name <span style="color: red">*</span>
+          </label>
+          <br />
+          <div class="nameInputContatiner">
+            <div class="nameInputField">
+              <input type="text" /><br />
+              <span class="description"> First name</span>
+            </div>
+            <div>
+              <input type="text" /> <br />
+              <span class="description">Last name</span>
+            </div>
+          </div>
+
+          <br />
+
+          <label for="Address"
+            >Address<span style="color: red"> *</span>
+          </label>
+          <br />
+          <div class="addressContainer">
+            <div>
+              <input type="text" class="streetAddress" /><br />
+              <span class="description">Street Addresss</span>
+            </div>
+            <div>
+              <input type="text" class="streetAddress" /><br />
+              <span class="description"> Street Address Line2 </span>
+            </div>
+            <div class="locationDetailContatiner">
+              <div>
+                <input type="text" /> <br />
+                <span class="description">City</span>
+              </div>
+              <div>
+                <input type="text" /><br />
+                <span class="description">State / Province</span>
+              </div>
+            </div>
+            <div class="locationDetailContatiner">
+              <div>
+                <input type="number" /><br />
+                <span class="description">Postal / Zip Code</span>
+              </div>
+              <div>
+                <input list="Country" placeholder="Please Select" /><br />
+                <span class="description">Country</span>
+              </div>
+              <datalist id="Country">
+                <option value="India"></option>
+                <option value="Bhutan"></option>
+                <option value="Myanmar"></option>
+                <option value="Nepal"></option>
+                <option value="Bangladesh"></option>
+              </datalist>
+            </div>
+          </div>
+
+          <br />
+
+          <label> Any specific day/time?</label> <br />
+          <div class="dateContainer">
+            <div>
+              <input type="number" class="dayOrTime" /> <br />
+              <span class="description">Month</span>
+            </div>
+            <span class="seperator"> - </span>
+            <div>
+              <input type="number" class="dayOrTime" /> <br />
+              <span class="description">Date</span>
+            </div>
+            <span class="seperator"> - </span>
+            <div>
+              <input type="number" class="dayOrTime" /> <br />
+              <span class="description">Year</span>
+            </div>
+            <div>
+              <input list="hours" class="dayOrTime" /> <br />
+              <span class="description">Hour</span>
+              <datalist id="hours">
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+              </datalist>
+            </div>
+            <span class="seperator"> : </span>
+            <div>
+              <input list="Minutes" class="dayOrTime" /> <br />
+              <span class="description">Minutes</span>
+              <datalist id="Minutes">
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+              </datalist>
+            </div>
+            <div>
+              <input list="TimeSlab" placeholder="AM" class="dayOrTime" />
+              <datalist id="TimeSlab">
+                <option value="AM"></option>
+                <option value="PM"></option>
+              </datalist>
+            </div>
+          </div>
+          <br />
+          <label>What service you are looking for?</label>
+          <br />
+          <textarea id="appoinmentReason"></textarea> <br />
+          <input type="submit" />
+        </form>
+        <div id="submit"></div>
+      </div>
+    </div>
+  </body>
+</html>
